@@ -1,0 +1,54 @@
+// tp.idl : IDL source for tp
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (tp.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(3F473F86-E4D3-48FE-BD7F-B3CA92BBADFB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ItpBHO : IDispatch
+{
+};
+
+[
+	object,
+	uuid(EC3D039E-8989-461E-B643-08348D8E9BA8),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ItpAPP : IUnknown
+{
+};
+
+[
+	uuid(8938E568-7AB1-49A5-921A-09B956FA03D4),
+	version(1.0),
+]
+library tpLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(58517635-1A4E-49A3-ADEF-12716F504060)		
+	]
+	coclass tpBHO
+	{
+		[default] interface ItpBHO;
+	};
+	[
+		uuid(13EE19AF-0CD7-494A-A2B7-3634872012A5)		
+	]
+	coclass tpAPP
+	{
+		[default] interface ItpAPP;
+	};
+};
+
